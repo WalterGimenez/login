@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserServiceService } from 'src/app/users/user.service.service';
 
 @Component({
   selector: 'app-register',
@@ -9,12 +10,15 @@ export class RegisterComponent  {
   email!: string;
   password!: string;
   confirmPassword!: string;
+  passErrorBolean!: boolean;
 
-  constructor() { }
+  constructor(public userService: UserServiceService) { }
 
   register() {
-    console.log("email", this.email);
-    console.log("password", this.password);
+    const user = { email: this.email, password: this.password };
+    this.userService.register(user).subscribe(data => {
+      console.log(data);
+    });
   }
 
 }

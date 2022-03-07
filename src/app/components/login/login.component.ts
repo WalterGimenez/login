@@ -17,8 +17,8 @@ export class LoginComponent {
   login(){
     const user = {email: this.email, password: this.password};
     this.userService.login(user).subscribe( data => {
-      this.userService.setToken(data.token);
-      this.router.navigateByUrl('/');
+      this.userService.setToken(data.token);//las cookies se ven en Aplication
+      this.router.navigateByUrl('/');//si da ok que vaya al 
     },
     //para averiguar si hay errores en la llamada a la API
       error => {

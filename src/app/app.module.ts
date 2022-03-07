@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CookieService } from 'ngx-cookie-service';
+import { HomeComponent } from './home/home/home.component';
+import { ErrorPaginaComponent } from './error/error-pagina/error-pagina.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
+    ErrorPaginaComponent
   ],
   imports: [
     BrowserModule,
